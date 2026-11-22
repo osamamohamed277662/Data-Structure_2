@@ -9,36 +9,23 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        //Boxing
-        int num = 10;
-        object r = num;
 
-        //UnBoxing
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        numbers.Add(11);
 
-        object j = 44;
-        int b;
-        b =(int) j;
+        Console.WriteLine("After adding 11: " + string.Join(" , ", numbers));
 
-        //Console.WriteLine(b);
+        numbers.Insert(2, 66);
+        Console.WriteLine("After adding 66 at index 2: " + string.Join(" , ", numbers));
 
-        List<int> Numbers = new List<int>();
-        Numbers.Add(1);
-        Numbers.Add(2);
-        Numbers.Add(3);
-        Numbers.Add(4);
-        Numbers.Add(5);
+        numbers.Insert(0, 300);
+        Console.WriteLine("After adding 300 at index 0: " + string.Join(" , ", numbers));
 
-        Console.WriteLine("Number of items in the list: " + Numbers.Count);
-        Console.WriteLine(Numbers[0]);
-        Console.WriteLine(Numbers[1]);
-        Console.WriteLine(Numbers[2]);
-        Console.WriteLine(Numbers[3]);
-        Console.WriteLine(Numbers[4]);
+        numbers.Insert(8, 66);
+        Console.WriteLine("After adding 66 at index 8: " + string.Join(" , ", numbers));
 
-        Console.WriteLine("Changing the value of item 2 of the list to 500:");
-        Numbers[1] = 500;
-        Console.WriteLine(Numbers[1]);
-
+        numbers.InsertRange(4, new List<int> { 77, 78, 79 });
+        Console.WriteLine("After adding  77, 78, 79 at index 4: " + string.Join(" , ", numbers));
 
 
 
