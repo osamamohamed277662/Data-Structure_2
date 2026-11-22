@@ -10,29 +10,15 @@ internal class Program
     static void Main(string[] args)
     {
 
-        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        Console.WriteLine("Sum: " + numbers.Sum());
+        Console.WriteLine("Average: " + numbers.Average());
+        Console.WriteLine("Minimum: " + numbers.Min());
+        Console.WriteLine("Maximum: " + numbers.Max());
+        Console.WriteLine("Count: " + numbers.Count());
 
-        Console.WriteLine("Number of items in the list: " + numbers.Count);
 
-        Console.WriteLine("\nDisplaying list elements using a for loop:");
 
-        for (int i = 0; i < numbers.Count; i++)
-        {
-            Console.WriteLine(numbers[i]);
-        }
-
-        Console.WriteLine("\nDisplaying list elements using a foreach loop:");
-
-        foreach (int number in numbers)
-        {
-            Console.WriteLine(number);
-        }
-
-        Console.WriteLine("\nDisplaying list elements using List.ForEach:");
-
-        numbers.ForEach(number => Console.WriteLine(number));
-
-        
 
         Console.ReadKey();
 
