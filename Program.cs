@@ -10,23 +10,29 @@ internal class Program
     static void Main(string[] args)
     {
 
-        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
 
-        numbers.Remove(9);
-        Console.WriteLine("After Removing 9: " + string.Join(" , ", numbers));
+        Console.WriteLine("Number of items in the list: " + numbers.Count);
 
-        numbers.RemoveAt(2);
-        Console.WriteLine("After Removing index 2 which equal 3 : " + string.Join(" , ", numbers));
+        Console.WriteLine("\nDisplaying list elements using a for loop:");
 
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            Console.WriteLine(numbers[i]);
+        }
 
-        numbers.RemoveAll(n => n % 2 == 0);
-        Console.WriteLine("After Removing all even numbers: " + string.Join(" , ", numbers));
+        Console.WriteLine("\nDisplaying list elements using a foreach loop:");
 
-        numbers.Clear();
-        Console.WriteLine("After clearing the list, count:  " + numbers.Count);
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
 
+        Console.WriteLine("\nDisplaying list elements using List.ForEach:");
 
+        numbers.ForEach(number => Console.WriteLine(number));
 
+        
 
         Console.ReadKey();
 
