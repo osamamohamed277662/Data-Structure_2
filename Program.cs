@@ -10,15 +10,13 @@ internal class Program
     static void Main(string[] args)
     {
 
-        List<int> numbers = new List<int> { 44, 22, -55, 666, 9, -6, 345, 11, 3, 3 };
-        Console.WriteLine("List Of Number : " + string.Join(" , ", numbers));
+        List<string> words = new List<string> { "apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew" };
 
-        Console.WriteLine("List Contains 9 : " + numbers.Contains(9));
-        Console.WriteLine("List Contains Negative Number : " + numbers.Exists(n => n < 0));
-        Console.WriteLine("First Negative Number : " + numbers.Find(n => n < 0));
-
-        Console.WriteLine("All Negative Number : " + string.Join(" , ", numbers.FindAll(n => n < 0)));
-        Console.WriteLine("Number Greater than 100: " + numbers.Any(n => n > 100));
+        Console.WriteLine("List Contain 'apple': " + words.Contains("apple"));
+        Console.WriteLine("List contains a word of length 5: " + words.Exists(word => word.Length > 5));
+        Console.WriteLine("First word longer than 5 characters: " + words.Find(word => word.Length > 5));
+        Console.WriteLine("Words longer than 5 characters: " + string.Join(" , ", words.FindAll(word => word.Length > 5)));
+        Console.WriteLine("Any words starting with 'a': " + words.Any(word => word.StartsWith("a")));
 
 
 
