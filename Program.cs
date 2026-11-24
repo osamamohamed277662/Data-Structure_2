@@ -10,16 +10,16 @@ internal class Program
     static void Main(string[] args)
     {
 
-        List<int> numbers = new List<int> { 44, 22, 55, 666, 9, -6, 345, 11, 3, 3 };
+        List<int> numbers = new List<int> { 44, 22, -55, 666, 9, -6, 345, 11, 3, 3 };
+        Console.WriteLine("List Of Number : " + string.Join(" , ", numbers));
 
-        numbers.Sort();
-        Console.WriteLine("Sorted in Ascending Order: " + string.Join(" , ", numbers));
+        Console.WriteLine("List Contains 9 : " + numbers.Contains(9));
+        Console.WriteLine("List Contains Negative Number : " + numbers.Exists(n => n < 0));
+        Console.WriteLine("First Negative Number : " + numbers.Find(n => n < 0));
 
-        numbers.Reverse();
-        Console.WriteLine("Sorted in Descending Order: " + string.Join(", ", numbers));
+        Console.WriteLine("All Negative Number : " + string.Join(" , ", numbers.FindAll(n => n < 0)));
+        Console.WriteLine("Number Greater than 100: " + numbers.Any(n => n > 100));
 
-        Console.WriteLine("Sorted in Ascending Order By LINQ: " + string.Join(", ", numbers.OrderBy(n=>n)));
-        Console.WriteLine("Sorted in Descending Order By LINQ: " + string.Join(", ", numbers.OrderByDescending(n => n)));
 
 
         Console.ReadKey();
